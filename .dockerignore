@@ -1,0 +1,16 @@
+# Ignorar dependencias locales (dejar que el contenedor instale las suyas)
+node_modules/
+npm-debug.log
+.git
+.gitignore
+.dockerignore
+Dockerfile
+docker-compose.yml
+README.md
+
+# Ignorar las carpetas de los frontends (ya que no se usan en la imagen del backend)
+frontend-admin/
+frontend-user/
+
+# Ignorar carpetas de datos
+mysql_data/

@@ -1,0 +1,16 @@
+# Dependencias
+node_modules/
+dist/
+build/
+
+# Entorno
+.env
+.env.local
+
+# Docker y Base de datos (datos persistentes)
+mysql_data/
+
+# Logs y archivos de sistema
+*.log
+.DS_Store
+Thumbs.db
