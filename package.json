@@ -5,13 +5,24 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"docker-compose up\" \"cd frontend-admin && pnpm run dev\" \"cd frontend-user && pnpm run dev\""
+    "dev:all": "concurrently \"pnpm --filter backend dev\" \"pnpm --filter frontend-client dev\" \"pnpm --filter frontend-admin dev\"",
+    "dev:back": "pnpm --filter backend dev",
+    "dev:front": "concurrently \"pnpm --filter frontend-client dev\" \"pnpm --filter frontend-admin dev\"",
+    "build:all": "pnpm -r build"    
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.33.0",
-  "devDependencies": {
-    "concurrently": "^9.2.1"
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.5.1",
+      "onFail": "download"
+    }
+  },
+  "type": "module",
+  "dependencies": {
+    "concurrently": "^10.0.3",
+    "cors": "^2.8.6"
   }
 }
